@@ -176,7 +176,7 @@ User.send(type)
 
 ```ruby
 type = params[:type]
-User.send(type) if ['abc', 'zyz'].include(type)
+User.send(type) if ['abc', 'zyz'].include?(type)
 ```
 
 ## Ruby Garbage Collection

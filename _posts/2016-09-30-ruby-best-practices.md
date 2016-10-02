@@ -156,6 +156,30 @@ Enumerable#select.first | Enumerable#detect
 
 [READ MORE](https://github.com/JuanitoFatas/fast-ruby)
 
+## Be careful when using EVAL, SEND
+
+When you use them, please make sure you can handle what will be entered.
+
+**DON'T**
+
+```ruby
+type = params[:type] # type = "system('rm -rf ./')"
+eval(type)
+```
+
+```ruby
+type = params[:type] # type = delete_all
+User.send(type)
+```
+
+**SHOULD BE**
+
+```ruby
+type = params[:type]
+User.send(type) if ['abc', 'zyz'].include(type)
+```
+
 ## Ruby Garbage Collection
 
-I have researched about it, and I will update later. :d
+I have researched about it, so I will update later. :d
+

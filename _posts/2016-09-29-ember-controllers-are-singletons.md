@@ -75,9 +75,7 @@ loadData: Ember.on('init', function() {
   });
 })
 ```
-For this example, data of `authors` property only load 1 time with anytime next rendering.
-
-There are confused between `render` and `component` but we talk about it next time.
+For this example, data of `authors` property only load 1 time on next rendering.
 
 **Source:**
 

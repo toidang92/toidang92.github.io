@@ -429,7 +429,7 @@ i.fa.fa-share-square-o.card-share click="action 'openModal' 'quote/sharing' quot
 {% endraw %}
 {% endhighlight %}
 
-* `quote/sharing`: the controller which you want to display on modal;
+* `quote/sharing`: the controller which you want to display on modal.
 * `quote`: the model of this controller.
 
 ## Bounty

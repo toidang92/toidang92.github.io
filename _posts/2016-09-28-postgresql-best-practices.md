@@ -86,7 +86,7 @@ SELECT userid, username FROM user WHERE user_amount < 3001
 
 ## Only add Indexes when necessary
 
-It’s tempting to add indexes to every column, however, an index helps speed up SELECT queries and WHERE clauses, but it slows down data input, with UPDATE and INSERT statements. That can hit performance; only add indexes when necessary.
+It’s tempting to add indexes to every column, however, an index helps speed up SELECT queries and WHERE clauses, but it slows down data input, with UPDATE and INSERT statements. That can hit performance; **only add indexes when necessary**.
 
 ## Index and use same column types for joins
 

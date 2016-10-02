@@ -11,23 +11,26 @@ The bellow will be used on our demo:
 * JQuery 2.1.4
 * Emblem 0.9 (This is a template for ember. You can use Handlebars instead of this).
 * ember-route-action-helper 2.0.0
-* ember-wormhole 0.4.1 (There have some issues about display modal-backdrop so I have used it to resolve).
+* ember-wormhole 0.4.1 (There are a issue about display modal-backdrop so I have used it to resolve).
 
 ## Let's start
 
 ### 1\. Add modal outlet to our application template
 
-```slim
+{% highlight fade %}
+{% raw %}
 #ember-modal-container
 = outlet 'modal'
-```
+{% endraw %}
+{% endhighlight %}
 
 * The `#ember-modal-container` div is where `ember-wormhole` will be moved block code inside.
 * `outlet 'modal'` is the place where the template of modal component will be rendered.
 
 ### 2\. Add `openModal` and `closeModal` actions to application route
 
-```javacript
+{% highlight javascript %}
+{% raw %}
 const MODAL_DEFAULT_DESTINATION = 'ember-modal-container';
 const MODAL_DEFAULT_OUTLET = 'modal';
 
@@ -54,7 +57,8 @@ export default Ember.Route.extend({
     }
   }
 });
-```
+{% endraw %}
+{% endhighlight %}
 
 * openModal:
 	* `modalName`: name of controller will be rendered in to modal.
@@ -70,7 +74,7 @@ Here is my 2 components for modal:
 
 * Component
 
-```javascript
+{% highlight javascript %}
 {% raw %}
 const { computed, observer } = Ember;
 const Modal = {};
@@ -341,25 +345,26 @@ export default Ember.Component.extend({
   }
 });
 {% endraw %}
-```
+{% endhighlight %}
 
 * Template
 
-```slim
-{% raw%}
+{% highlight javascript %}
+{% raw %}
 = ember-wormhole to=emberWormholeDestination renderInPlace=renderInPlace
   = bootstrap/bs-modal-dialog close=(action "close") fade=fade in=in id=modalId title=title closeButton=closeButton keyboard=keyboard size=size extraClass=extraClass backdropClose=backdropClose
     yield this
   if showBackdrop
     .modal-backdrop class="modal-backdrop {{if fade "fade"}} {{if in "in"}}" id="{{backdropId}}"
 {% endraw %}
-```
+{% endhighlight %}
 
 #### 2\. bootstrap/bs-modal-dialog
 
 * Component
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 import Ember from 'ember';
 
 const { computed } = Ember;
@@ -398,26 +403,31 @@ export default Ember.Component.extend({
     this.sendAction('close');
   }
 });
-```
+{% endraw %}
+{% endhighlight %}
 
 * Template
 
-```slim
+{% highlight javascript %}
+{% raw %}
 .modal-dialog class="{{sizeClass}} {{extraClass}}"
   .modal-content
     if title
       h4.modal-header.text-xs-center
         = title
     = yield
-```
+{% endraw %}
+{% endhighlight %}
 
 ### 4\. How to use
 
 Example:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 i.fa.fa-share-square-o.card-share click="action 'openModal' 'quote/sharing' quote"
-```
+{% endraw %}
+{% endhighlight %}
 
 * `quote/sharing`: the controller which you want to display on modal;
 * `quote`: the model of this controller.
@@ -426,7 +436,8 @@ i.fa.fa-share-square-o.card-share click="action 'openModal' 'quote/sharing' quot
 
 If I want to modify the URL without reloading the page when the modal is opened that like facebook :D. You can use bellow code:
 
-```javascript
+{% highlight javascript %}
+{% raw %}
 const MODAL_DEFAULT_DESTINATION = 'ember-modal-container';
 const MODAL_DEFAULT_OUTLET = 'modal';
 
@@ -477,7 +488,8 @@ export default Ember.Route.extend({
     }
   }
 });
-```
+{% endraw %}
+{% endhighlight %}
 
 * `replaceCurrentUrl`: enable/disable modify the URL
 * `beforeModalUrl`: store preview url

@@ -58,7 +58,6 @@ Bài viết cũng đã khá dài, e rằng devs sẽ ngại đọc. Mong là s�
 
 Mọi bình luận luôn được hoan nghênh. Have fun!
 
-
 **Source:**
 
 1. [From Trung Kiên :D](https://www.facebook.com/trungkien.phan.35?fref=ts)

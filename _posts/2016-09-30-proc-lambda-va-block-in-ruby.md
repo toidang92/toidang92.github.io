@@ -98,7 +98,7 @@ proc = Proc.new {|x| puts x.upcase }
 RUBY
 AND
 COFFEE
- => ["ruby", "on", "coffee"]
+=> ["ruby", "and", "coffee"]
 ```
 
 ## Lambda và sự khác biệt giữa với proc

@@ -45,7 +45,7 @@ Ember.run.scheduleOnce('afterRender', this, () => {
 
 ### [RSVP](https://github.com/tildeio/rsvp.js/)
 
-A lightweight library that provides tools for organizing asynchronous code. We talk more about later.
+A lightweight library that provides tools for organizing asynchronous code. We talk more on next article.
 
 ```javascript
 reply.save().then(() => {

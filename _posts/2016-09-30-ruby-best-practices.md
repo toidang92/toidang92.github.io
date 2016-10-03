@@ -31,8 +31,10 @@ OR
 **DON'T**
 
 ```ruby
-def with_condition
-  respond_to?(:mythical_method) ? self.mythical_method : nil
+def with_rescue
+  self.mythical_method
+rescue NoMethodError
+  nil
 end
 ```
 

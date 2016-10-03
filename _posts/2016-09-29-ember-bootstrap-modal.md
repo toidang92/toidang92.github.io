@@ -432,7 +432,7 @@ i.fa.fa-share-square-o.card-share click="action 'openModal' 'quote/sharing' quot
 * `quote/sharing`: the controller which you want to display on modal.
 * `quote`: the model of this controller.
 
-## Bounty
+## More :D
 
 If I want to modify the URL without reloading the page when the modal is opened that like facebook :D. You can use bellow code:
 

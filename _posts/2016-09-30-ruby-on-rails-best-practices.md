@@ -50,8 +50,8 @@ Let’s look at the following code. It will fetch zip of 10 users.
 **DON'T**
 
 ```ruby
-users = User.all(:limit => 10)
-  users.each do |user|
+users = User.all(limit: 10)
+users.each do |user|
   puts user.address.zip
 end
 ```
@@ -68,7 +68,7 @@ end
 
 ## Use Index
 
-Database indexing is one of the simplest ways to improve database performance. The insert operation will become slower but will boost up fetching data which is more frequently used in web application.
+Database indexing is one of the simplest ways to improve database performance. The INSERT or UPDATE operation will become slower but will boost up fetching data which is more frequently used in web application.
 
 ## Avoid dynamism
 

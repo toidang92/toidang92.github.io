@@ -54,7 +54,7 @@ setupController: function(controller, model) {
 }
 ```
 
-## What I can do with it
+## What we can do
 
 The `render` helper renders a combination of a controller and template, and optionally allows you to provide a specific model to be set to the content property of the controller. If you do not provide a model, the singleton instance of the controller will be used.
 

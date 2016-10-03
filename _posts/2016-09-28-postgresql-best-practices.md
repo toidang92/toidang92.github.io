@@ -20,7 +20,7 @@ time_now = Time.current
 Article.where('created_at >= ?', time_now)
 ```
 
-## Explain your Select queries
+## Explain your SELECT queries
 
 Using the [EXPLAIN](https://www.postgresql.org/docs/9.1/static/sql-explain.html) keyword can give you insight on what PostgreSQL is doing to execute your query.
 
@@ -70,12 +70,12 @@ The use of the `%` wildcard at the beginning of the `LIKE` pattern will prevent 
 SELECT * FROM users WHERE name LIKE 'bar%'
 ```
 
-## 2 comparison operator into 1 criteria query
+## 2 comparison operator on 1 condition
 
 Example:
 
 ```sql
-SELECT userid, username FROM user WHERE user_amount <=3000
+SELECT userid, username FROM user WHERE user_amount <= 3000
 ```
 
 This will cause the SQL statement comparing two times: user_amount <3000 OR user_amount = 3000 so slow queries. It maybe instead of this (if the type of user_amount is integer):
@@ -110,7 +110,7 @@ randome_article = Article.offset(random_number).first
 => SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" ASC LIMIT 1 OFFSET 22126
 ```
 
-## Avoid Using "SELECT *" in your Queries
+## Avoid using "SELECT *" in your Queries
 
 Always specify which columns you need when you are doing your SELECT Query.
 
@@ -119,17 +119,6 @@ Always specify which columns you need when you are doing your SELECT Query.
 In every table have an id column that is the PRIMARY KEY, AUTO_INCREMENT and one of the flavors of INT. Also preferably UNSIGNED, since the value can not be negative.
 
 Even if you have a users table that has a unique username field, do not make that your primary key. VARCHAR fields as primary keys are slower. And you will have a better structure in your code by referring to all users with their id's internally.
-
-## Use EXIST over IN for subquery
-
-I highly recommend you to user EXIST & NOT EXIST in subquery for the large table.
-
-[READ MORE](http://stackoverflow.com/a/14194444)
-
-**In short:**
-
-*   Use EXISTS when the subquery results are very large.
-*   Use IN when the subquery results are very small.
 
 ## Fixed-length (Static) Tables are Faster
 

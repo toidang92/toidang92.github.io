@@ -3,28 +3,54 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+## Summary Information
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+`Toi Dang (Male - 24 years old - Ho Chi Minh City)`
 
-There are currently two themes built on Poole:
+`Full name: Dang Ba Toi`
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+`I'm a Ruby On Rails Developer (2.5 years)`
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+`I'm a Full-Stack Developer`
 
-## Setup
+## Working Experience
 
-Some fun facts about the setup of this project include:
+06/2015 - 09/2015:
 
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
+*   Web developer in `NUS Technology Company`
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+05/2014 - 05/2015:
 
-Thanks for reading!
+*   Web developer in `VINOVA Company`
+
+## Education
+
+April 2015:
+
+`Ho Chi Minh City University of Technology`
+
+## Skills
+
+`Ruby On Rails`
+
+`Javascript`, `jQuery`, `EmberJs`
+
+`Bootstrap`
+
+`Postgresql`, `MongoDB`
+
+`MVC`
+
+`SOLR Search Engine`
+
+`Docker`, `Chef`, `Vagrant`
+
+## Additional Information
+
+Preferred about job description: Full-stack web development.
+
+Can work: Back-end, Server deployment, Front-end.
+
+Preferred work location: Ho Chi Minh City
+
+End. :$ :$ :$

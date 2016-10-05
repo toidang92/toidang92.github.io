@@ -100,7 +100,7 @@ If you need to get the only email of user
 User.limit(100).map(&:email)
 ```
 
-Normal
+Can Be...
 
 ```ruby
 User.select(:email).limit(100).map(&:email)

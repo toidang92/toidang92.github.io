@@ -6,3 +6,21 @@ iframe {
   margin-left: 0;
   margin-right: 0;
 }
+
+.btn-share {
+  color: #fff !important;
+  padding: 4px 15px;
+  text-decoration: none;
+}
+
+.btn-facebook {
+  background: #3b5998;
+}
+
+.btn-twitter {
+  background: #00aced;
+}
+
+.btn-google {
+  background: #dd4b39;
+}

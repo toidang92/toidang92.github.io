@@ -9,17 +9,17 @@ If you have ever used `paperclip`, maybe you have seen the message like that: **
 
 For this bug, we will have two solutions:
 
-1. Specify an extension that cannot otherwise be mapped:
+* Specify an extension that cannot otherwise be mapped:
 
-```ruby
+{% highlight ruby %}
 Paperclip.options[:content_type_mappings] = {
   pem: "text/plain"
 }
-```
+{% endhighlight %}
 
-2. Override `media_type_spoof_detector` method:
+* Override `media_type_spoof_detector` method:
 
-```ruby
+{% highlight ruby %}
 require 'paperclip/media_type_spoof_detector'
 module Paperclip
   class MediaTypeSpoofDetector
@@ -28,13 +28,13 @@ module Paperclip
     end
   end
 end
-```
+{% endhighlight %}
 
 The second solution is very bad. Why? The monkey-patching will ignore check type of uploading file, if an attacker put an entire HTML page into the EXIF tag of a completely valid JPEG and named the file “gotcha.html,” they could potentially trick users into an XSS vulnerability.
 
 ## How do paperclip determine Content Type Spoofing
 
-```ruby
+{% highlight ruby %}
 def spoofed?
   if has_name? && has_extension? && media_type_mismatch? && mapping_override_mismatch?
     Paperclip.log("Content Type Spoof: Filename #{File.basename(@name)} (#{supplied_content_type} from Headers, #{content_types_from_name.map(&:to_s)} from Extension), content type discovered from file command: #{calculated_content_type}. See documentation to allow this combination.")
@@ -43,7 +43,7 @@ def spoofed?
     false
   end
 end
-```
+{% endhighlight %}
 
 [FULL CODE](https://github.com/thoughtbot/paperclip/blob/e60f00027704298455c039e111d96bcf46e12822/lib/paperclip/media_type_spoof_detector.rb#L13-L20)
 

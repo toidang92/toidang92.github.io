@@ -56,7 +56,4 @@ end
 file -b --mime '/var/folders/w1/jljslm493yd9gfvbddn4ghp80000gn/T/224e20c3e580e19e06486bc62811c72d20161002-13093-q2f599.png'
 ```
 
-**Note**
-
-**You should use code from verified source. Otherwise, you should try to understand what the code will do.**
-
+**Note: You should use code from verified source. Otherwise, you should try to understand what the code will do.**

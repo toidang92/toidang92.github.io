@@ -3,7 +3,7 @@ layout: post
 title: Ember - Bootstrap Modal
 ---
 
-## Getting started
+## I. Getting started
 
 The bellow will be used on our demo:
 
@@ -13,9 +13,9 @@ The bellow will be used on our demo:
 * ember-route-action-helper 2.0.0
 * ember-wormhole 0.4.1 (There are a issue about display modal-backdrop so I have used it to resolve).
 
-## Let's start
+## II. Let's start
 
-### 1\. Add modal outlet to our application template
+### 1. Add modal outlet to our application template
 
 {% highlight fade %}
 {% raw %}
@@ -27,7 +27,7 @@ The bellow will be used on our demo:
 * The `#ember-modal-container` div is where `ember-wormhole` will be moved block code inside.
 * `outlet 'modal'` is the place where the template of modal component will be rendered.
 
-### 2\. Add `openModal` and `closeModal` actions to application route
+### 2. Add `openModal` and `closeModal` actions to application route
 
 {% highlight javascript %}
 {% raw %}
@@ -66,11 +66,11 @@ export default Ember.Route.extend({
 	* `modalDefaultDestination`: is where `ember-wormhole` will be moved block code inside. Here is `ember-modal-container` div.
 
 
-### 3\. Add template/component for modal
+### 3. Add template/component for modal
 
 Here is my 2 components for modal:
 
-#### 1\. bootstrap/bs-modal
+#### bootstrap/bs-modal
 
 * Component
 
@@ -359,7 +359,7 @@ export default Ember.Component.extend({
 {% endraw %}
 {% endhighlight %}
 
-#### 2\. bootstrap/bs-modal-dialog
+#### bootstrap/bs-modal-dialog
 
 * Component
 
@@ -419,7 +419,7 @@ export default Ember.Component.extend({
 {% endraw %}
 {% endhighlight %}
 
-### 4\. How to use
+### How to use
 
 Example:
 
@@ -432,7 +432,7 @@ i.fa.fa-share-square-o.card-share click="action 'openModal' 'quote/sharing' quot
 * `quote/sharing`: the controller which you want to display on modal.
 * `quote`: the model of this controller.
 
-## More :D
+## III. More :D
 
 If I want to modify the URL without reloading the page when the modal is opened that like facebook :D. You can use bellow code:
 

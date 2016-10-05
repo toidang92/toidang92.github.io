@@ -3,7 +3,7 @@ layout: post
 title: Ruby Best Practices
 ---
 
-## Avoid allocates a lot of objects
+## I. Avoid allocates a lot of objects
 
 Example:
 
@@ -26,7 +26,7 @@ OR
 1_000_000.times { "some string or object".freeze }
 ```
 
-## Do not use exceptions for a control flow
+## II. Do not use exceptions for a control flow
 
 **DON'T**
 
@@ -46,7 +46,7 @@ def with_condition
 end
 ```
 
-## Be careful with calculation within iterators
+## III. Be careful with calculation within iterators
 
 **DON'T**
 
@@ -64,9 +64,9 @@ def func(array)
 end
 ```
 
-## Avoid object creation if possible
+## IV. Avoid object creation if possible
 
-### String concatenation
+### 1. String concatenation
 
 Avoid using `+=` to concatenate strings in favor of `<<` method
 
@@ -97,7 +97,7 @@ As a result of using += you have the next disadvantages:
 * More calculation to join strings.
 * Redundant string object in memory (previous value of str1), which approximates time when GC will trigger.
 
-### Use bang! methods
+### 2. Use bang! methods
 
 In many cases, bang methods do the same as there non-bang analogs but without duplication an object.
 
@@ -134,7 +134,7 @@ puts a
 => [1,3,5]
 ```
 
-### Parallel assignment is slower
+### 3. Parallel assignment is slower
 
 **DON'T**
 
@@ -149,7 +149,7 @@ a = 10
 b = 20
 ```
 
-## Use the methods are optimized by ruby
+## V. Use the methods are optimized by ruby
 
 DON'T| SHOULD BE
 ---|-----
@@ -158,7 +158,7 @@ Enumerable#select.first | Enumerable#detect
 
 [READ MORE](https://github.com/JuanitoFatas/fast-ruby)
 
-## Be careful when using EVAL, SEND
+## VI. Be careful when using EVAL, SEND
 
 When you use them, please make sure you can handle what will be entered.
 
@@ -181,7 +181,7 @@ type = params[:type]
 User.send(type) if ['abc', 'zyz'].include?(type)
 ```
 
-## Ruby Garbage Collection
+## VII. Ruby Garbage Collection
 
 I have researched about it, so I will update later. :d
 

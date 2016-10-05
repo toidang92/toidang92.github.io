@@ -3,7 +3,7 @@ layout: post
 title: Ember - Controllers are singletons
 ---
 
-## Controllers are singletons
+## I. Controllers are singletons
 
 Controllers in Ember are singletons. Controllers in Ember are singletons. Controllers in Ember are singletons.
 
@@ -13,7 +13,7 @@ This makes total sense for a framework that aims to be a tool for creating long-
 
 If you have a long background in back-end development, like yours truly, it is especially easy to fall prey to this, as you could see.
 
-## Understanding the problem
+## II. Understanding the problem
 
 For example, we have a controller `ChartController` which have `changedCalculation` is mark for any changes in the calculation of this chart. If `changedCalculation` is true, we will have an `Apply` button bellow input of this property.
 
@@ -37,7 +37,7 @@ changedCalculation: function () {
 
 When the transition is entered between the two charts, the chart object is changed and consequently any data bound to the chart (and the `changedCalculation` property of the `ChartController` controller) is going to be rerendered, but since `changedCalculation` is not changed, unrelated data will stay unchanged on screen with `Apply` button still in there.
 
-## How to fix
+## III. How to fix
 
 Here are some solutions and it depends on the specific case:
 
@@ -54,7 +54,7 @@ setupController: function(controller, model) {
 }
 ```
 
-## What we can do
+## IV. What we can do
 
 The `render` helper renders a combination of a controller and template, and optionally allows you to provide a specific model to be set to the content property of the controller. If you do not provide a model, the singleton instance of the controller will be used.
 

@@ -3,7 +3,7 @@ layout: post
 title: Dropshipping Vs Affiliate Marketing
 ---
 
-## What Is Dropshipping?
+## I. What Is Dropshipping?
 
 Dropshipping is a way to run an online store where you don’t have to store inventory and you don’t have to ship product. The way it works is that you set up your storefront and collect money just like a regular store.
 
@@ -13,7 +13,7 @@ The amount of profit you make is your selling price minus the wholesale price.
 
 The main advantage of dropshipping of course is that you don’t have to manage inventory or product fulfillment. However, since you are selling the product under your own store name, you are still responsible for customer support.
 
-## What Is Affiliate Marketing?
+## III. What Is Affiliate Marketing?
 
 Affiliate marketing is when you refer a customer to another business and take a commission if the customer makes a purchase. In effect, your website acts like a marketing and referral engine and you don’t actually sell any product.
 

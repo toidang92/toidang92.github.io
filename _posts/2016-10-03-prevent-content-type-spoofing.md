@@ -3,7 +3,7 @@ layout: post
 title: Prevent Content Type Spoofing on Paperclip
 ---
 
-## Understanding the problem
+## I. Understanding the problem
 
 If you have ever used `paperclip`, maybe you have seen the message like that: **Image has contents that are not what they are reported to be**.
 
@@ -32,7 +32,7 @@ end
 
 The second solution is very bad. Why? The monkey-patching will ignore check type of uploading file, if an attacker put an entire HTML page into the EXIF tag of a completely valid JPEG and named the file “gotcha.html,” they could potentially trick users into an XSS vulnerability.
 
-## How do paperclip determine Content Type Spoofing
+## II. How do paperclip determine Content Type Spoofing
 
 {% highlight ruby %}
 def spoofed?

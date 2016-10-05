@@ -3,13 +3,13 @@ layout: post
 title: Một số sai lầm của dev P2
 ---
 
-## Không quản lý được thời gian làm việc của bản thân.
+## I. Không quản lý được thời gian làm việc của bản thân.
 
-### Đi làm không đúng giờ:
+### 1. Đi làm không đúng giờ:
 
 Có thể ở công ty có yếu tố thoải mái về thời gian, hoặc bạn sẽ ở lại làm bù thêm quãng thời gian tới muộn. Tuy nhiên việc đi trễ lâu dài sẽ hình thành cho bạn một thói quen như vậy.
 
-### Tốn quá nhiều thời gian cho task log hay report:
+### 2. Tốn quá nhiều thời gian cho task log hay report:
 
 Tất nhiên tùy vào dự án, và khách hàng mà report của mình càng tỉ mỉ hay không? Tuy nhiên việc bạn tốn đến 45p, 1h hay 2h để làm report thì nó thực sự là vấn đề.
 
@@ -19,7 +19,7 @@ Mình sẽ chỉ ra cho các bạn 1 số mẹo nhỏ:
 *   Hoàn thành xong mỗi task, bạn hay dành ra 1-2 phút để note lại.
 *   Đến lúc cần viết task log sẽ rất nhanh chóng, bạn không cần phải ngồi vò đầu bứt tai: Mình đã làm cái gì nhỉ, log cái gì bây giờ ?
 
-## Làm rất nhiều nhưng vẫn không biết log cái gì vì không thể nhớ, bị lố thời gian estimate.
+## II. Làm rất nhiều nhưng vẫn không biết log cái gì vì không thể nhớ, bị lố thời gian estimate.
 
 Bạn estimate tổng thời gian là 3h, nhưng ngồi làm 1 mạch hết 4-5h chẳng hạn.
 
@@ -27,14 +27,14 @@ Bạn estimate tổng thời gian là 3h, nhưng ngồi làm 1 mạch hết 4-5h
 *   Bạn sẽ dễ dàng kiểm soát được mình có bám theo được thời gian estimate hay không? Phát hiện ra issue về thời gian estimate kịp thời.
 *   Không nên làm một mạch từ đầu tới cuối toàn bộ chức năng luôn, sẽ có những chỗ bạn gặp issue và cố fix, khiến thời gian bị bung ra thế là sau cùng sẽ bị lố giờ.
 
-## Hụt thời gian estimate – cắm đầu bù thời gian.
+## III. Hụt thời gian estimate – cắm đầu bù thời gian.
 
 *   Nếu bạn thực hiện như phía trên bám sát thời gian estimate, bạn sẽ sớm phát hiện được các point phát sinh.
 *   Tất nhiên việc làm rõ requirement, cần làm tốt trước khi estimate. Tuy nhiên có những điểm mà bản thân phía dev cũng như khách hàng không hình dung ra nổi. Trừ khi bắt tay vào làm, rồi mới nhận ra được.
 *   Hoặc khách hàng thay đổi yêu cầu khi mình đang thực hiện rồi.
 *   Tất cả những point phát sinh đó, cần được phát hiện sớm và bạn nên cập nhật thời gian estimate và xin xác nhận từ khách hàng trước khi làm tiếp.
 
-## Estimate một cục thời gian rất lớn.
+## IV. Estimate một cục thời gian rất lớn.
 
 *   Khách hàng giao cho bạn một task và yêu cầu bạn estimate, thay vì để một vài points 3h, 2h, 5h.
 *   Bạn nên bẻ nhỏ các points ra, thành nhiều cái nhỏ hơn với thời gian ít hơn, các cụ thể, tỉ mỉ càng tốt.
@@ -46,13 +46,13 @@ Bạn estimate tổng thời gian là 3h, nhưng ngồi làm 1 mạch hết 4-5h
     Tất nhiên họ không phải là dev, nên view nhìn của họ sẽ rất khác dev, nếu bạn nghĩ giải pháp của team bạn đưa ra là tốt và có lợi cho sau này.
     Hãy đưa ra lời giải thích về giải pháp + thời gian estimate, khách hàng sẽ hiểu được và duyệt giải pháp của bạn ngay + đánh giá bạn rất cao.
 
-## Hãy rời khỏi những group skype (hay cái gì tương tự) nếu bạn không còn thực sự cần.
+## V. Hãy rời khỏi những group skype (hay cái gì tương tự) nếu bạn không còn thực sự cần.
 
 Việc giao tiếp là vô cùng quan trọng, ngoài làm việc, chúng ta vẫn cần tương tác với những kênh giao tiếp khác nhau. Tuy nhiên việc “lưu luyến” không rời khỏi những nhóm không còn cần thiết sẽ khiến bạn bị spam.
 
 Thay vì đợi người khác kích bạn ra khỏi nhóm, bạn nên chủ động để rời khỏi nhóm.
 
-## Kết luận
+## VI. Kết luận
 
 Bài viết cũng đã khá dài, e rằng devs sẽ ngại đọc. Mong là sẽ được devs đón nhận và có những ý kiến phản hồi về những cách xử lý hay hơn, đa dạng hơn.
 

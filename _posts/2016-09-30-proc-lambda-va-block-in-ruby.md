@@ -7,7 +7,7 @@ Hôm nay, tôi xin cùng các bạn bàn về Tính Callable và Runable của O
 
 Hôm nay tôi xin giới thiệu về Anonymous Functions như là Proc, Lambda, Blocks để thấy rõ về tính Callable và Runable của Objects trong Ruby.
 
-## Anonymous Functions: The Proc Class
+## I. Anonymous Functions: The Proc Class
 
 Một trong những Callable Object quan trọng của Ruby là Proc objects and Lambdas. Proc objects thì tự bản thân nó chứa trình tự các dòng code và bạn có thể khởi tạo, lưu trữ, hoặc truyền ‘arguments’ và khi cần thì thực thi nó bằng method ‘call’.
 
@@ -51,7 +51,7 @@ proc_object_2.class
 Proc
 ```
 
-## Proc và Block khác nhau như thế nào?
+## II. Proc và Block khác nhau như thế nào?
 
 Khi tạo 1 `Proc` object thì chúng ta luôn luôn cần cung cấp 1 code block, nhưng không phải mọi code block đều là `Proc` hoặc là phục vụ cho 1 `Proc` cụ thể nào.
 
@@ -101,7 +101,7 @@ COFFEE
 => ["ruby", "and", "coffee"]
 ```
 
-## Lambda và sự khác biệt giữa với proc
+## III. Lambda và sự khác biệt giữa với proc
 
 Giống như `Proc.new`, `lambda` method cũng tạo 1 Proc object
 

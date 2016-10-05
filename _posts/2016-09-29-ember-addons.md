@@ -3,13 +3,13 @@ layout: post
 title: Ember Addons
 ---
 
-## Already included in Ember
+## I. Already included in Ember
 
-### [JQuery](https://jquery.com/)
+### [1. JQuery](https://jquery.com/)
 
 jQuery is so popular, we don't need talk more about it.
 
-### [Backburner](https://github.com/ebryn/backburner.js/)
+### [2. Backburner](https://github.com/ebryn/backburner.js/)
 
 A rewrite of the Ember.js [run loop](https://guides.emberjs.com/v1.10.0/understanding-ember/run-loop/) as a generic microlibrary.
 
@@ -43,7 +43,7 @@ Ember.run.scheduleOnce('afterRender', this, () => {
 });
 ```
 
-### [RSVP](https://github.com/tildeio/rsvp.js/)
+### [3. RSVP](https://github.com/tildeio/rsvp.js/)
 
 A lightweight library that provides tools for organizing asynchronous code. We talk more on next article.
 
@@ -58,9 +58,9 @@ reply.save().then(() => {
 
 ```
 
-## Other add-ons
+## II. Other add-ons
 
-### [ember-ajax](https://github.com/ember-cli/ember-ajax)
+### [1. ember-ajax](https://github.com/ember-cli/ember-ajax)
 
 Service for making AJAX requests in Ember 1.13+ applications.
 
@@ -70,11 +70,11 @@ Service for making AJAX requests in Ember 1.13+ applications.
 * Ability to specify request headers
 * Upgrade path from ic-ajax
 
-### [ember-infinity](https://github.com/hhff/ember-infinity)
+### [2. ember-infinity](https://github.com/hhff/ember-infinity)
 
 Simple, flexible infinite scrolling for Ember CLI Apps
 
-### [ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper)
+### [3. ember-route-action-helper](https://github.com/DockYard/ember-route-action-helper)
 
 Bubble closure actions in routes
 
@@ -100,7 +100,7 @@ export default Route.extend({
 });
 ```
 
-### [ember-wormhole](https://github.com/yapplabs/ember-wormhole)
+### [4. ember-wormhole](https://github.com/yapplabs/ember-wormhole)
 
 This is my favorite ember addon :D. This addon provides a component that allows for rendering a block to a DOM element somewhere else on the page.
 

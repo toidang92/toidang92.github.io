@@ -3,7 +3,7 @@ layout: post
 title: Postgres Best Practices
 ---
 
-## Optimize your queries for the query cache
+## I. Optimize your queries for the query cache
 
 PostgreSQL has no cache for result of stable functions. This applies to all non-deterministic functions like NOW() and RANDOM() etc... Since the return result of the function can change, PostgreSQL decides to disable query caching for that query.
 
@@ -20,11 +20,11 @@ time_now = Time.current
 Article.where('created_at >= ?', time_now)
 ```
 
-## Explain your SELECT queries
+## II. Explain your SELECT queries
 
 Using the [EXPLAIN](https://www.postgresql.org/docs/9.1/static/sql-explain.html) keyword can give you insight on what PostgreSQL is doing to execute your query.
 
-## Use Index
+## III. Use Index
 
 If there are any columns in your table that you will query by frequently, you should almost always index them.
 
@@ -34,7 +34,7 @@ ALTER TABLE "users" ADD INDEX ("username");
 
 Postgres support: B-tree, R-tree, Hash, SP-GiST and GIN indexing types. B-tree indexing is default type, the most common and fits most common scenarios. We will talk about how to determine what type of index later :D.
 
-## Index on Negative criteria (NOT something or another)
+## IV. Index on Negative criteria (NOT something or another)
 
 The index will not be used by "negative" criteria, so the below operators will make to slow query if they are used.
 
@@ -42,7 +42,7 @@ The index will not be used by "negative" criteria, so the below operators will m
 "IS NULL", "!=", "!>", "!<", "NOT", "NOT EXISTS", "NOT IN", "NOT LIKE"
 ```
 
-## Avoid functions on the LEFT-HAND-SIDE of the operator
+## V. Avoid functions on the LEFT-HAND-SIDE of the operator
 
 Functions are a handy way to provide complex tasks and they can be used both in the SELECT clause and in the WHERE clause. Nevertheless, their application in WHERE clauses may result in major performance issues. Take a look at the following example:
 
@@ -56,7 +56,7 @@ Even if there is an index on the appointment\_date column in the table users, th
 SELECT email FROM users WHERE appointment_date > '2015-04-30'
 ```
 
-## Avoid wildcard characters at the beginning of a like operator
+## VI. Avoid wildcard characters at the beginning of a like operator
 
 Whenever possible, avoid using the `LIKE` pattern in the following way
 
@@ -70,7 +70,7 @@ The use of the `%` wildcard at the beginning of the `LIKE` pattern will prevent 
 SELECT * FROM users WHERE name LIKE 'bar%'
 ```
 
-## 2 comparison operator on 1 condition
+## VII. 2 comparison operator on 1 condition
 
 Example:
 
@@ -84,13 +84,13 @@ This will cause the SQL statement comparing two times: user_amount <3000 OR user
 SELECT userid, username FROM user WHERE user_amount < 3001
 ```
 
-## Only add Indexes when necessary
+## VIII. Only add Indexes when necessary
 
 It’s tempting to add indexes to every column, however, an index helps speed up SELECT queries and WHERE clauses, but it slows down data input, with UPDATE and INSERT statements. That can hit performance; **only add indexes when necessary**.
 
-## Index and use same column types for joins
+## IIX. Index and use same column types for joins
 
-## Do not Order by RANDOM()
+## IX. Do not Order by RANDOM()
 
 If you really need random rows out of your results, there are much better ways of doing it. Granted it takes additional code, but you will prevent a bottleneck that gets exponentially worse as your data grows. The problem is, PostgresSQL will have to perform RANDOM() operation (which takes processing power) for every single row in the table before sorting it and giving you just 1 row.
 
@@ -110,23 +110,23 @@ randome_article = Article.offset(random_number).first
 => SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" ASC LIMIT 1 OFFSET 22126
 ```
 
-## Avoid using "SELECT *" in your Queries
+## X. Avoid using "SELECT *" in your Queries
 
 Always specify which columns you need when you are doing your SELECT Query.
 
-## Almost always have an id Field
+## XI. Almost always have an id Field
 
 In every table have an id column that is the PRIMARY KEY, AUTO_INCREMENT and one of the flavors of INT. Also preferably UNSIGNED, since the value can not be negative.
 
 Even if you have a users table that has a unique username field, do not make that your primary key. VARCHAR fields as primary keys are slower. And you will have a better structure in your code by referring to all users with their id's internally.
 
-## Fixed-length (Static) Tables are Faster
+## XII. Fixed-length (Static) Tables are Faster
 
 `VARCHAR`, `TEXT`, `BLOB` are not fixed-length
 
 Convert a VARCHAR(20) field to a CHAR(20) field, it will always take 20 bytes of space regardless of what is it in.
 
-## Do use vertical partitioning to avoid large data moves
+## XIII. Do use vertical partitioning to avoid large data moves
 
 Example:
 
@@ -138,7 +138,7 @@ But you also need to make sure you don't constantly need to join these 2 tables 
 
 [READ MORE](https://en.wikipedia.org/wiki/Partition_(database))
 
-## Break big query into chunks
+## XIV. Break big query into chunks
 
 When a big query like that is performed, it can lock your tables for a long time, get much memory for the server's available resources and bring your application to a halt. I put together a different script that will perform this query in chunks: 25,000, 50,000, 75,000 and 100,000 rows at a time.
 
@@ -154,24 +154,24 @@ Article.where("title like 'a%'").find_each { |e| '' }
 	Article Load (35.1ms)  SELECT  "articles".* FROM "articles" WHERE (title ilike 'a%') AND ("articles"."id" > 21945)  ORDER BY "articles"."id" ASC LIMIT 1000
 ```
 
-## Avoid NULL if possible
+## XV. Avoid NULL if possible
 
 Unless you have a very specific reason to use a NULL value, you should always set your columns as NOT NULL. The performance improvement from changing NULL columns to NOT NULL is usually small, so don’t make it a priority to find and change them on an existing schema unless you know they are causing problems. However, if you’re planning to index columns, avoid making them nullable if possible.
 
-## Smaller is usually better
+## XVI. Smaller is usually better
 
 Smaller data types are usually faster, because they use less space on the disk, in memory, and in the CPU cache. They also generally require fewer CPU cycles to process.
 
 If a table is expected to have very few rows, there is no reason to make the primary key a BIGINT, instead of INTEGER, SMALLINT. If you do not need the time component, use DATE instead of DATETIME.
 
-## Simple is good
+## XVII. Simple is good
 
 Fewer CPU cycles are typically required to process operations on simpler data types. For example, integers are cheaper to compare than characters, because character sets and collations (sorting rules) make character comparisons complicated. Here are two examples:
 
 *   You should store dates and times in PostgreSQL's built-in types instead of as strings
 *   You should use integers for IP addresses.
 
-## Optimize sub-queries
+## XVIII. Optimize sub-queries
 
 Replace a join with a subquery. For example, try this:
 
@@ -189,7 +189,7 @@ SELECT DISTINCT column1 FROM t1 WHERE t1.column1 IN (SELECT column1 FROM t2)
 
 [READ MORE EXAMPLES](http://dev.mysql.com/doc/refman/5.7/en/optimizing-subqueries.html)
 
-## Transaction
+## XIX. Transaction
 
 * Read Committed is the default isolation level in PostgreSQL.
 * Choose right isolation level. Read more \([EN](http://highscalability.com/blog/2011/2/10/database-isolation-levels-and-their-effects-on-performance-a.html) | [VI](http://www.sqlviet.com/blog/cac-mc-isolation-level)\).

@@ -25,9 +25,8 @@ title: About
 
 ## Education
 
-April 2015:
-
-`Ho Chi Minh City University of Technology`
+`University of Information Technology`
+`Information System`
 
 ## Skills
 
